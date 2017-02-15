@@ -259,7 +259,7 @@ De nuevo en este ejemplo pondremos todo el contenido en un archivo _form2.php:_
 
 Se incluye un **input** del tipo _**hidden**_ que limita el tamaño máximo del archivo que se puede subir (en bytes).
 
-La información sobre un archivo subido la proporciona el [array multidimensional](http://diego.com.es/arrays-en-php#ArraysMultidimensionales) **$_FILES**. Este array se crea con el _**key**_ que se indique en el input del formulario, en este caso "imagen":
+La información sobre un archivo subido la proporciona el [array multidimensional] **$_FILES**. Este array se crea con el _**key**_ que se indique en el input del formulario, en este caso "imagen":
 
 *   $_FILES["imagen"]**["name"]**. Guarda el nombre original del archivo del cliente.
 *   $_FILES["imagen"]**["type"]**. Guarda el MIME type del archivo.
