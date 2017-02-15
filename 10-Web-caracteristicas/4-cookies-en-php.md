@@ -53,7 +53,7 @@ setcookie($nombre, $valor, $expiracion, $ruta, $dominio, $seguridad, $solohttp);
 echo "Cookie establecida";
 ```
 
-La opción de _$seguridad_ fuerza a que la cookie sólo sea enviada si se ha establecido una conexión segura HTTPs. _$solohttp_ hace que la cookie sólo esté disponible a través de **http**, por lo que lenguajes del lado del servidor como JavaScript no pueden acceder a la cookie. Esto ayuda a prevenir [ataques XSS](http://diego.com.es/ataques-xss-cross-site-scripting-en-php), aunque si se quiere acceso a las cookies desde JavaScript se tiene que activar. Esto no significa que no se puedan enviar cookies a través de HTTPs.
+La opción de _$seguridad_ fuerza a que la cookie sólo sea enviada si se ha establecido una conexión segura HTTPs. _$solohttp_ hace que la cookie sólo esté disponible a través de **http**, por lo que lenguajes del lado del servidor como JavaScript no pueden acceder a la cookie. Esto ayuda a prevenir [ataques XSS], aunque si se quiere acceso a las cookies desde JavaScript se tiene que activar. Esto no significa que no se puedan enviar cookies a través de HTTPs.
 
 Las cookies pueden verse con Firebug de Firefox o con las Developer Tools de Google Chrome.
 
@@ -72,7 +72,7 @@ $valorCookie = $_COOKIE['usuario'];
 echo $valorCookie; // Devuelve: Homer
 ```
 
-Esta variable de entorno puede utilizarse como cualquier otra, como [$_GET y $_POST](http://diego.com.es/get-y-post-en-php), y puede tratarse como una variable normal (una vez comprobada su existencia).
+Esta variable de entorno puede utilizarse como cualquier otra, como [$GET Y $POST], y puede tratarse como una variable normal (una vez comprobada su existencia).
 
 Si se quiere modificar la **fecha de expiración**, **path** o **dominio**, se ha de sobreescribir la cookie con _**setcookie()**_ con el mismo nombre que la cookie original. Si se establece una fecha de expiración en el pasado (por ejemplo _time()-30*60_), la cookie se eliminará.
 
