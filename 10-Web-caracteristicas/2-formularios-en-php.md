@@ -60,7 +60,7 @@ Tu email es: <?php echo $_GET["email"]; ?>
 </html>
 ```
 
-Estos han sido dos ejemplos muy sencillos para ver el **funcionamiento básico de un formulario**. Siempre que se crean formularios hay que tener muy en cuenta la **seguridad**, y para ello se utiliza la [validación de formularios](#Validacion).
+Estos han sido dos ejemplos muy sencillos para ver el **funcionamiento básico de un formulario**. Siempre que se crean formularios hay que tener muy en cuenta la **seguridad**.
 
 Las _superglobals_ $_GET y $_POST sirven para coleccionar datos de formularios, y vamos a ver las diferencias a continuación.
 
@@ -138,7 +138,7 @@ Vamos a ver los **aspectos más característicos**:
 *   Educación es un elemento _**select**_, que permite seleccionar _**options**_ en una lista. El texto en el atributo _**value**_ es el que se enviará a través del formulario. El atributo _**selected**_ permite mostrar el seleccionado por defecto.
 *   Nacionalidad es del tipo _**radio**_, los elementos radio del mismo grupo han de tener un único atributo _**name**_ y sólo se puede seleccionar uno.
 *   Los idiomas están en un elemento _**checkbox**_, que permite enviar varios datos en forma de array si se indica en el atributo _**name**_ con corchetes. Se puede añadir un atributo _**checked**_ como seleccionado por defecto.
-*   En _**action**_ se ha puesto _<?php echo htmlespecialchars($_SERVER["PHP_SELF"]); ?>_. **$_SERVER["PHP_SELF"]** es una superglobal que devuelve el nombre del archivo en el que se encuentra el formulario, lo que hace que los datos se envíen al mismo archivo, en lugar de llevarlos a otro archivo para tratarlos. Si se emplea esta forma de indicar el archivo para _**action**_, es necesario usar la función _htmlespecialchars()_, que convierte caracteres especiales en entidades HTML previniendo posibles [ataques Cross-site Scripting](http://diego.com.es/ataques-xss-cross-site-scripting-en-php).
+*   En _**action**_ se ha puesto _<?php echo htmlespecialchars($_SERVER["PHP_SELF"]); ?>_. **$_SERVER["PHP_SELF"]** es una superglobal que devuelve el nombre del archivo en el que se encuentra el formulario, lo que hace que los datos se envíen al mismo archivo, en lugar de llevarlos a otro archivo para tratarlos. Si se emplea esta forma de indicar el archivo para _**action**_, es necesario usar la función _htmlespecialchars()_, que convierte caracteres especiales en entidades HTML previniendo posibles.
 
 En este ejemplo todas las acciones de validar, enviar y recibir datos se hacen en el mismo archivo _form.php_.
 
@@ -185,7 +185,7 @@ Sitio web : <?php isset($sitioweb) ? print $sitioweb : ""; ?> <br>
 <?php endif; ?>
 ```
 
-Todos los campos anteriores son **opcionales**. La validación más básica consiste en **exigir que se rellene un campo**, y comprobaremos también que el email tiene un **formato de email**, que el **sitio web es una URL correcta** y que **password** tiene un mínimo de 5 caracteres. Las **validaciones de formatos** pueden realizarse mediante expresiones regulares o con **filtros**. Siempre que sea posible, es mejor utilizar los [filtros de PHP](http://diego.com.es/filtrado-de-datos-de-entrada-en-php#LaExtensionDeFiltradoDePHP).
+Todos los campos anteriores son **opcionales**. La validación más básica consiste en **exigir que se rellene un campo**, y comprobaremos también que el email tiene un **formato de email**, que el **sitio web es una URL correcta** y que **password** tiene un mínimo de 5 caracteres. Las **validaciones de formatos** pueden realizarse mediante expresiones regulares o con **filtros**. Siempre que sea posible, es mejor utilizar los [filtros de PHP].
 
 ```
 if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
