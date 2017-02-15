@@ -1,2 +1,3 @@
 # Asi-consegui-aprobar-EXAMEN-ZEND-PHP-
-Apuntes.
+Apuntes
+Gracias a los apuntes de LÁZARO,pude conseguir aprobar.
